@@ -1,0 +1,137 @@
+:root {
+    --cream: #FFF8F0;
+    --warm-white: #FFFCF7;
+    --terracotta: #D4745E;
+    --sage: #8B9B7E;
+    --coffee: #4A3428;
+    --warm-gray: #E8DED2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    background: var(--cream);
+    color: var(--coffee);
+}
+
+/* HEADER */
+header {
+    background: var(--warm-white);
+    padding: 2rem;
+    border-bottom: 1px solid var(--warm-gray);
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--coffee);
+}
+
+/* HERO */
+.hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 5rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.hero-image-placeholder {
+    height: 500px;
+    background: url('assets/brunch1.jpg') center/cover;
+    border-radius: 8px;
+}
+
+/* MENU */
+.menu-section {
+    background: var(--warm-white);
+    padding: 6rem 2rem;
+}
+
+.menu-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.menu-item {
+    background: var(--cream);
+    padding: 2.5rem;
+    border-radius: 8px;
+}
+
+/* CAROUSEL */
+.carousel {
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+}
+
+.slide-bg {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+/* FOOTER */
+footer {
+    background: var(--coffee);
+    color: var(--cream);
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+}

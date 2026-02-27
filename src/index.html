@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Enea - Neighborhood Brunch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FFF8F0;
+            --warm-white: #FFFCF7;
+            --terracotta: #D4745E;
+            --deep-clay: #B85C47;
+            --sage: #8B9B7E;
+            --coffee: #4A3428;
+            --warm-gray: #E8DED2;
+            --light-sage: #C8D5BB;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Karla', sans-serif;
+            background: var(--cream);
+            color: var(--coffee);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        /* Header */
+        header {
+            background: var(--warm-white);
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--warm-gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--light-sage) 0%, transparent 70%);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            color: var(--coffee);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--coffee);
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--terracotta);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--terracotta); }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* Hero */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            color: var(--coffee);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero-tagline {
+            font-size: 1.3rem;
+            color: var(--sage);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            color: var(--coffee);
+            opacity: 0.85;
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .hero-image-placeholder {
+            width: 100%;
+            height: 500px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--coffee);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            background-image: url(/assets/brunch1.jpg);
+            background-size: 100% 100%;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            background: var(--warm-white);
+            padding: 6rem 2rem;
+            border-top: 1px solid var(--warm-gray);
+            border-bottom: 1px solid var(--warm-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            color: var(--coffee);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--sage);
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+
+        .menu-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .menu-item {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--warm-gray);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .menu-item h3 {
+            font-size: 2rem;
+            color: var(--terracotta);
+            margin-bottom: 0.8rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .menu-item p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--coffee);
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .menu-price {
+            font-weight: 500;
+            color: var(--coffee);
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        /* ===== CAROUSEL SECTION ===== */
+        .gallery-section {
+            padding: 6rem 2rem;
+            background: var(--cream);
+        }
+
+        .carousel-wrapper {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            position: relative;
+        }
+
+        .carousel {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(74, 52, 40, 0.15);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-slide img,
+        .carousel-slide .slide-bg {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slide-bg {
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Caption overlay */
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 3rem 2.5rem 2rem;
+            background: linear-gradient(transparent, rgba(74, 52, 40, 0.75));
+            color: var(--cream);
+        }
+
+        .slide-caption h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: var(--cream);
+        }
+
+        .slide-caption p {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        /* Prev / Next buttons */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 248, 240, 0.85);
+            backdrop-filter: blur(6px);
+            border: none;
+            color: var(--coffee);
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+
+        .carousel-btn:hover {
+            background: var(--cream);
+            transform: translateY(-50%) scale(1.08);
+        }
+
+        .carousel-btn.prev { left: 16px; }
+        .carousel-btn.next { right: 16px; }
+
+        /* Dots */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 1.8rem;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--warm-gray);
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            border: none;
+        }
+
+        .carousel-dot.active {
+            background: var(--terracotta);
+            transform: scale(1.3);
+        }
+
+        /* Counter */
+        .carousel-counter {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--sage);
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        /* Location Section */
+        .location-section {
+            background: var(--warm-white);
+            padding: 6rem 2rem;
+            border-top: 1px solid var(--warm-gray);
+        }
+
+        .location-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .info-block { margin-bottom: 3rem; }
+
+        .info-block h3 {
+            font-size: 1.8rem;
+            color: var(--terracotta);
+            margin-bottom: 1.2rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .info-block p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--coffee);
+            opacity: 0.85;
+        }
+
+        .hours-grid { display: grid; gap: 0.8rem; margin-top: 1rem; }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dotted var(--warm-gray);
+        }
+
+        .day { font-weight: 500; }
+        .time { color: var(--sage); }
+
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background-image: url(maps.bar.jpg);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--coffee);
+            opacity: 0.6;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            background-size: 100% 100%;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--coffee);
+            color: var(--cream);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        footer p { font-size: 0.95rem; opacity: 0.8; }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--cream);
+        }
+
+        /* Decorative */
+        .decorative-accent {
+            position: fixed;
+            bottom: 10%;
+            right: 5%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--terracotta) 0%, transparent 70%);
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: -1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero { grid-template-columns: 1fr; gap: 3rem; padding: 3rem 2rem; }
+            .hero-content h1 { font-size: 3.5rem; }
+            .nav-links { gap: 1.5rem; }
+            .location-content { grid-template-columns: 1fr; gap: 3rem; }
+            .section-title { font-size: 2.8rem; }
+            .carousel-slide .slide-bg { height: 380px; }
+        }
+
+        @media (max-width: 640px) {
+            .hero-content h1 { font-size: 2.8rem; }
+            .nav-links { flex-direction: column; gap: 1rem; }
+            nav { flex-direction: column; gap: 1.5rem; }
+            .menu-grid { grid-template-columns: 1fr; }
+            .carousel-slide .slide-bg { height: 280px; }
+            .carousel-btn { width: 40px; height: 40px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="decorative-accent"></div>
+    
+    <header>
+        <nav>
+            <div class="logo">Bar Enea</div>
+            <ul class="nav-links">
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#location">Visit Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Start Your Day Right</h1>
+            <p class="hero-tagline">Where neighbors become family</p>
+            <p class="hero-description">
+                Welcome to your neighborhood brunch spot. We serve fresh, wholesome food 
+                made with love every morning. From fluffy pancakes to perfectly poached eggs, 
+                every dish tells a story of comfort and care.
+            </p>
+        </div>
+        <div class="hero-image">
+            <div class="hero-image-placeholder"></div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <h2 class="section-title">Menu Highlights</h2>
+        <p class="section-subtitle">Made fresh every morning with local ingredients</p>
+        
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>Albanian Breakfast</h3>
+                <p>Sunny eggs, cheese, ham, tomato, cucumber</p>
+                <div class="menu-price">900 lekë</div>
+            </div>
+            <div class="menu-item">
+                <h3>Avocado Toast</h3>
+                <p>Sourdough bread topped with smashed avocado, cherry tomatoes, fried egg</p>
+                <div class="menu-price">800 lekë</div>
+            </div>
+            <div class="menu-item">
+                <h3>Eggs Benedict</h3>
+                <p>Classic eggs benedict with Canadian ham or avocado paste, poached eggs, and homemade hollandaise on buttered bread</p>
+                <div class="menu-price">1200 – 1300 lekë</div>
+            </div>
+            <div class="menu-item">
+                <h3>Cheeseburger</h3>
+                <p>Homemade ground beef patty, cheese, vegetables</p>
+                <div class="menu-price">1000 lekë</div>
+            </div>
+            <div class="menu-item">
+                <h3>Chicken Fillet à la Cream</h3>
+                <p>Chicken fillet with creamy sauce</p>
+                <div class="menu-price">900 lekë</div>
+            </div>
+            <div class="menu-item">
+                <h3>Tartufo Pasta</h3>
+                <p>Truffle, parmigiano, cream cheese</p>
+                <div class="menu-price">900 lekë</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CAROUSEL GALLERY ===== -->
+    <section id="gallery" class="gallery-section">
+        <h2 class="section-title">Our Specialities</h2>
+        <p class="section-subtitle">Experience the warmth of our space</p>
+
+        <div class="carousel-wrapper">
+            <div class="carousel">
+                <div class="carousel-track" id="carouselTrack">
+
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide">
+                        <div class="slide-bg" style="background-image: url('/assets/matcha.jpg'); height: 500px;"></div>
+                        <div class="slide-caption">
+                            <h3>Matcha</h3>
+                            <p>A vibrant start to your morning</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide">
+                        <div class="slide-bg" style="background-image: url('/assets/scramble.jpg'); height: 500px;"></div>
+                        <div class="slide-caption">
+                            <h3>Scrambled Eggs</h3>
+                            <p>Fluffy, buttery, and made to order</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide">
+                        <div class="slide-bg" style="background-image: url('/assets/pancake.jpg'); height: 500px;"></div>
+                        <div class="slide-caption">
+                            <h3>Pancakes</h3>
+                            <p>Golden stacks with seasonal toppings</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="carousel-slide">
+                        <div class="slide-bg" style="background-image: url('/assets/albanian.jpg'); height: 500px;"></div>
+                        <div class="slide-caption">
+                            <h3>Albanian Breakfast</h3>
+                            <p>A classic taste of home</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="carousel-slide">
+                        <div class="slide-bg" style="background-image: url('/assets/Eggs.jpg'); height: 500px;"></div>
+                        <div class="slide-caption">
+                            <h3>Eggs Benedict</h3>
+                            <p>Perfectly poached with homemade hollandaise</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-btn prev" id="prevBtn">&#8592;</button>
+                <button class="carousel-btn next" id="nextBtn">&#8594;</button>
+            </div>
+
+            <div class="carousel-dots" id="carouselDots"></div>
+            <div class="carousel-counter" id="carouselCounter">1 / 5</div>
+        </div>
+    </section>
+
+    <section id="location" class="location-section">
+        <h2 class="section-title">Visit Us</h2>
+        <p class="section-subtitle">Rruga Skënderbeu, Sarandë</p>
+        
+        <div class="location-content">
+            <div>
+                <div class="info-block">
+                    <h3>Location</h3>
+                    <p>Rruga Skenderbeu<br>Sarandë<br>Albania</p>
+                </div>
+                <div class="info-block">
+                    <h3>Hours</h3>
+                    <div class="hours-grid">
+                        <div class="hours-row">
+                            <span class="day">Monday – Friday</span>
+                            <span class="time">7:00 AM – 10:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="day">Saturday</span>
+                            <span class="time">7:00 AM – 10:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="day">Sunday</span>
+                            <span class="time">7:00 AM – 10:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <h3>Contact</h3>
+                    <p>
+                        WhatsApp: +355 69 6746765<br>
+                        Instagram: Bar_kafe_enea
+                    </p>
+                </div>
+            </div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.5!2d20.0135!3d39.8717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135b14f41a562b7b:0x3684c4ea3aa53572!2sBar%20Kafe%20Enea!5e0!3m2!1sen!2sal!4v1"
+                width="100%"
+                height="400"
+                style="border:0; border-radius:8px; box-shadow: 0 15px 40px rgba(0,0,0,0.08);"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">BAR ENEA</div>
+        <p>&copy; 2010 Bar Enea – Brunch and more. Made with love since 2010.</p>
+    </footer>
+
+    <script>
+        const track = document.getElementById('carouselTrack');
+        const dotsContainer = document.getElementById('carouselDots');
+        const counter = document.getElementById('carouselCounter');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const total = slides.length;
+        let current = 0;
+        let autoplayTimer;
+
+        // Build dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+            dot.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        function goTo(index) {
+            current = (index + total) % total;
+            track.style.transform = `translateX(-${current * 100}%)`;
+            document.querySelectorAll('.carousel-dot').forEach((d, i) =>
+                d.classList.toggle('active', i === current)
+            );
+            counter.textContent = `${current + 1} / ${total}`;
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            goTo(current - 1);
+            resetAutoplay();
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            goTo(current + 1);
+            resetAutoplay();
+        });
+
+        // Autoplay every 4s
+        function startAutoplay() {
+            autoplayTimer = setInterval(() => goTo(current + 1), 4000);
+        }
+
+        function resetAutoplay() {
+            clearInterval(autoplayTimer);
+            startAutoplay();
+        }
+
+        startAutoplay();
+
+        // Touch / swipe support
+        let touchStartX = 0;
+        track.addEventListener('touchstart', e => touchStartX = e.touches[0].clientX, { passive: true });
+        track.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) {
+                goTo(current + (diff > 0 ? 1 : -1));
+                resetAutoplay();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowLeft') { goTo(current - 1); resetAutoplay(); }
+            if (e.key === 'ArrowRight') { goTo(current + 1); resetAutoplay(); }
+        });
+    </script>
+</body>
+</html>
