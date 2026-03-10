@@ -271,7 +271,7 @@ nav {
 .hero-bg-img {
     position: absolute;
     inset: 0;
-    background-image: url('assets/brunch1.jpg');
+    background-image: url('herofoto.jpg');
     background-size: cover;
     background-position: center;
     z-index: 0;
