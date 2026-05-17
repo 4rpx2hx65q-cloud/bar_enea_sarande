@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Full Menu - Bar Enea</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="global.css">
+
+  <style>
+
+    body {
+      background: var(--warm-white);
+    }
+
+    .menu-page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .menu-hero {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .menu-hero h1 {
+      font-size: 4rem;
+      color: var(--coffee);
+      margin-bottom: 1rem;
+    }
+
+    .menu-hero p {
+      color: var(--sage);
+      font-size: 1.1rem;
+    }
+
+    .menu-category {
+      margin-bottom: 5rem;
+    }
+
+    .menu-category h2 {
+      font-size: 2.5rem;
+      color: var(--terracotta);
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--warm-gray);
+      padding-bottom: 1rem;
+    }
+
+    .full-menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .full-menu-item {
+      background: var(--cream);
+      border: 1px solid var(--warm-gray);
+      border-radius: 10px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .full-menu-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    }
+
+    .full-menu-item h3 {
+      color: var(--coffee);
+      font-size: 1.7rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .full-menu-item p {
+      color: var(--coffee);
+      opacity: 0.75;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .price {
+      color: var(--terracotta);
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-bottom: 3rem;
+      color: var(--terracotta);
+      text-decoration: none;
+      border: 1px solid var(--terracotta);
+      padding: 0.8rem 1.8rem;
+      border-radius: 40px;
+      transition: all 0.3s ease;
+    }
+
+    .back-home:hover {
+      background: var(--terracotta);
+      color: white;
+    }
+
+    @media(max-width:640px){
+
+      .menu-hero h1{
+        font-size:2.8rem;
+      }
+
+      .menu-category h2{
+        font-size:2rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<section class="menu-page">
+
+<a href="index.html" class="back-home">
+← Back Home
+</a>
+
+<div class="menu-hero">
+<h1>Full Menu</h1>
+<p>Fresh coffee, juices, breakfast, brunch and bistro</p>
+</div>
+
+<!-- BREAKFAST -->
+<div class="menu-category">
+
+<h2>Breakfast</h2>
+
+<div class="full-menu-grid">
+
+<div class="full-menu-item">
+<h3>Banana</h3>
+<p>Banana wraped with chocolate crepe</p>
+<div class="price">750 lekë</div>
+</div>
+
+<div class="full-menu-item">
+<h3>Enea’s favorite</h3>
+<p>Pistachio, dry nuts</p>
+<div class="price">800 lekë</div>
+</div>
+
+<div class="full-menu-item">
+<h3>Classic pancakes</h3>
+<div class="price">850 lekë</div>
+</div>
+
+<div class="full-menu-item">
+<h3>Choco pancakes</h3>
+<div class="price">850 lekë</div>
+</div>
+
+<div class="full-menu-item">
+<h3>Choco and fruit pancakes</h3>
+<div class="price">900 lekë</div>
+</div>
+
+<div class="full-menu-item">
+<h3>Pistachio pancakes</h3>
+<div class="price">900 lekë</div>
+</div>
+</div>
+</div>
+<!-- TRADITION -->
+<div class="menu-category">
+
+<h2>We love tradition</h2>
+
+<div class="full-menu-grid">
+
+<div class="full-menu-item">
+<h3>Albanian breakfast</h3>
+<p>Sunny eggs, cheese, tomatoes, cucumber, ham</p>
+<div class="price">900 lekë</div>
+</div>
+
+<div class="full-menu-item">
+<h3>Healthy breakfast</h3>
+<p>Sunny eggs, cheese, tomatoes, cucumber, avocado</p>
+<div class="price">900 lekë</div>
+</div>
+
+<div class="full-menu-item">
+<h3>Classic breakfast</h3>
+<p>Toasted bread, jam, butter, cheese, milk</p>
+<div class="price">800 lekë</div>
+</div>
+</div>
+</div>
+
+<!-- SAVORY -->
+
+<div class="menu-category">
+
+<h2>Savory breakfast</h2>
+
+<div class="full-menu-grid">
+
+<div class="full-menu-item">
+<h3>Scrambled eggs with vegetables</h3>
+<p>Tomato, peppers, zucchini, avocado, eggplant, cheese.</p>
+<div class="price">900 lekë</div>
+</div>
+
+<div class="full-menu-item">
+<h3>Scrambled eggs breakfast</h3>
+<p>Three scrambled eggs with ham and cheese, tomatoes and cucumber.</p>
+<div class="price">1000 lekë</div>
+</div>
+
+<div class="full-menu-item">
+<h3>Plain omelette</h3>
+<div class="price">450 lekë</div>
+</div>
+
+<div class="full-menu-item">
+<h3>Cheese omelette</h3>
+<div class="price">500 lekë</div>
+</div>
+
+<div class="full-menu-item">
+<h3>Ham and cheese omelette</h3>
+<div class="price">600 lekë</div>
+</div>
+
+<div class="full-menu-item">
+<h3>Spinach omelette</h3>
+<div class="price">800 lekë</div>
+</div>
+</div>
+<!-- Bowls -->
+ <div class="menu-category">
+
+<h2>Bowls and fruits</h2>
+
+<div class="full-menu-grid">
+  
+<div class="full-menu-item">
+<h3>Fruit bowl</h3>
+<div class="price">650 lekë</div> 
+</div>    
+<div class="full-menu-item">
+<h3>Yogurt with oats, fruits and honey</h3>
+<div class="price">600 lekë</div> 
+</div>
+<div class="full-menu-item">
+<h3>Yogurt with granola</h3>
+<div class="price">700 lekë</div> 
+</div>
+<div class="full-menu-item">
+<h3>Yogurt Musli</h3>
+<div class="price">700 lekë</div>
+</div>
+</div>
+</div>
+<!-- Bowls -->
+  <div class="menu-category">
+
+<h2>Craving some brunch</h2>
+
+<div class="full-menu-grid">
+
+<div class="full-menu-item">
+<h3>Eggs benedict with ham</h3>
+<p>Buttered bread with ham, two poached eggs, hollandaise sauce</p>
+<div class="price">1300 lekë</div> 
+</div>
+<div class="full-menu-item">
+<h3>Eggs benedict with avocado</h3>
+<p>Bread with avocado paste, two poached eggs, hollandaise sauce</p>
+<div class="price">1200 lekë</div> 
+</div>
+<div class="full-menu-item">
+<h3>Scrambled eggs avocado toast</h3>
+<p>Sourdough, avocado paste, tomato, three scrambled eggs</p>
+<div class="price">1000 lekë</div> 
+</div>
+<div class="full-menu-item">
+<h3>Avocado toast</h3>
+<p>Sourdough, avocado paste, tomato, one fried/boiled egg</p>
+<div class="price">900 lekë</div> 
+</div>
+<div class="full-menu-item">
+<h3>French toast</h3>
+<p>Bread dipped in a mixture of eggs, milk, cinamon and fried till gold</p>
+<div class="price">900 lekë</div> 
+</div>
+</div>
+</div>
+<!-- Salad -->
+  <div class="menu-category">
+
+<h2>Salad</h2>
+
+<div class="full-menu-grid">
+<div class="full-menu-item">
+<h3>Greek salad</h3>
+<p>A classic Mediterranean mix of tomatoes, cucumber, olives, onion, and feta cheese</p>
+<div class="price">650 lekë</div> 
+</div>
+<div class="full-menu-item">
+<h3>Avocado</h3>
+<p>Fresh arugula, tomatoes, and creamy avocado, lightly dressed with olive oil and balsamic vinegar</p>
+<div class="price">700 lekë</div> 
+</div>
+<div class="full-menu-item">
+<h3>Caprese</h3>
+<p>Juicy tomatoes, burrata,  basil, sea salt, balsamic vinegar</p>
+<div class="price">900 lekë</div> 
+</div>
+</div>
+</div>
+<!-- Mains -->
+<div class="menu-category">
+<h2>Mains</h2>
+<div class="full-menu-grid">
+<div class="full-menu-item">    
+<h3>Cheesburger</h3>
+<div class="price">1000 lekë</div>
+</div>    
+<div class="full-menu-item">    
+<h3>Veal fillet</h3>
+<div class="price">1800 lekë</div>
+</div> 
+<div class="full-menu-item">    
+<h3>Veal fillet with truffle sauce</h3>
+<div class="price">2200 lekë</div>
+</div> 
+<div class="full-menu-item">    
+<h3>Grilled chicken fillet</h3>
+<div class="price">900 lekë</div>
+</div> 
+<div class="full-menu-item">    
+<h3>Chicken fillet ala cremé</h3>
+<div class="price">900 lekë</div>
+</div> 
+<div class="full-menu-item">    
+<h3>Chicken fillet with orange sauce</h3>
+<div class="price">1500 lekë</div>
+</div>
+</div>
+</div>
+<!-- To share --> 
+ <div class="menu-category">
+<h2>Sharing is caring</h2>
+<div class="full-menu-grid">
+  <div class="full-menu-item">
+<h3>Sauteed mussels</h3>
+<p>Fresh mussels sautéed in garlic, white wine, and herbs, finished with a light basil sauce</p>
+<div class="price">900 lekë</div>
+</div>
+<div class="full-menu-item">    
+<h3>Octapus salad</h3>
+<p>Fresh octopus with olive oil and lemon sauce</p>
+<div class="price">1500 lekë</div>  
+</div>
+<div class="full-menu-item">    
+<h3>Shrimp saganaki</h3>
+<p>Shrimp in a rich tomato sauce with melted cheese and Mediterranean herbs</p>
+<div class="price">1200 lekë</div>  
+</div>
+<div class="full-menu-item">    
+<h3>Pan prawns</h3>
+<p>Prawns sautéed in garlic, brandy and herbs, finished with extra virgin olive oil</p>
+<div class="price">1200 lekë</div>  
+</div>
+<div class="full-menu-item">    
+<h3>Fried calamari</h3>
+<p>Lightly battered and fried calamari served with a tangy lemon aioli</p>
+<div class="price">900 lekë</div>  
+</div>
+<div class="full-menu-item"> 
+<h3>Crispy zucchini bites</h3>
+<div class="price">900 lekë</div>  
+</div>
+<div class="full-menu-item"> 
+<h3>Crispy shrimp</h3>
+<div class="price">1500 lekë</div>  
+</div>
+<div class="full-menu-item"> 
+<h3>Crispy calamari</h3>
+<div class="price">1500 lekë</div>  
+</div>
+<div class="full-menu-item"> 
+<h3>Grilled octapus</h3>
+<div class="price">1500 lekë</div>  
+</div>
+<div class="full-menu-item"> 
+<h3>Grilled prawns</h3>
+<div class="price">1500 lekë</div>  
+</div>
+<div class="full-menu-item"> 
+<h3>Sesame-crusted cheese</h3>
+<div class="price">700 lekë</div>  
+</div>
+<div class="full-menu-item"> 
+<h3>Truffle fries</h3>
+<div class="price">800 lekë</div>  
+</div>
+</div>
+<!-- Pastas --> 
+  <div class="menu-category">
+<h2>Pastas</h2>
+<div class="full-menu-grid">
+
+<div class="full-menu-item">  
+<h3>Arabiata</h3>
+<p>Classic Italian pasta in a spicy tomato sauce with garlic, chili, and olive oil</p>
+<div class="price">600 lekë</div>  
+</div>
+<div class="full-menu-item">  
+<h3>Pesto and chicken</h3>
+<p>Fresh pesto, olive oil, parmesan and chicken fillet</p>
+<div class="price">900 lekë</div> 
+</div> 
+<div class="full-menu-item">  
+<h3>Tartufo</h3>
+<p>Truffle sauce, parmesan, homemade heavy cream</p>
+<div class="price">1000 lekë</div>  
+</div>
+<div class="full-menu-item">  
+<h3>Tartufo and shrimp</h3>
+<p>Truffle sauce, parmesan, homemade heavy cream, prawns</p>
+<div class="price">1200 lekë</div>  
+</div>
+<div class="full-menu-item">  
+<h3>Zucchini and shrimps</h3>
+<p>Pasta with shrimp, zucchini, and cherry tomatoes</p>
+<div class="price">1000 lekë</div>  
+</div>
+<div class="full-menu-item">  
+<h3>Seafood Pasta</h3>
+<p>Pasta with a mix of fresh seafood, full of Mediterranean flavor</p>
+<div class="price">1200 lekë</div>  
+</div>
+<div class="full-menu-item">  
+<h3>Orchette with veal fillet</h3>
+<p>Orecchiette pasta with tender veal fillet, lightly tossed in a rich savory sauce</p>
+<div class="price">1500 lekë</div>  
+</div>
+<div class="full-menu-item">  
+<h3>Creamy  shrimp gnocchi</h3>
+<p>Soft potato gnocchi in a smooth creamy sauce with juicy shrimp and a touch of garlic</p>
+<div class="price">1000 lekë</div>  
+</div>
+</div>
+</div>
+
+</section>
+</body>
+</html>

@@ -271,7 +271,7 @@ nav {
 .hero-bg-img {
     position: absolute;
     inset: 0;
-    background-image: url('herofoto.jpg');
+    background-image: url('new/IMG_0283.MOV');
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -372,8 +372,8 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
 }
 
 .menu-item {
@@ -408,6 +408,51 @@ nav {
     font-size: 1.1rem;
     margin-top: 1rem;
     font-weight: 500;
+}
+/* ===== FULL MENU BUTTON ===== */
+.full-menu-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.full-menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.8rem;
+    border: 1px solid var(--terracotta);
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--terracotta);
+    background: transparent;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.full-menu-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--terracotta);
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+    z-index: -1;
+}
+
+.full-menu-btn:hover::before {
+    transform: translateX(0);
+}
+
+.full-menu-btn:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(212,116,94,0.25);
 }
 
 /* ===== CAROUSEL ===== */
